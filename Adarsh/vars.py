@@ -17,7 +17,7 @@ class Var(object):
     WORKERS = int(getenv('WORKERS', '50'))
     BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1002040564082'))
     PORT = int(getenv('PORT', '8080'))
-    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '212.224.88.31'))
+    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', 'xsg0sok.greatnews.cloud'))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
     OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "52014953230").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
@@ -29,7 +29,7 @@ class Var(object):
     
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', 212.224.88.31)) if not ON_HEROKU or getenv('FQDN', 212.224.88.31)) else APP_NAME+'.railway.app'
+    FQDN = str(getenv('FQDN', xsg0sok.greatnews.cloud)) if not ON_HEROKU or getenv('FQDN', xsg0sok.greatnews.cloud)) else APP_NAME+'.railway.app'
     HAS_SSL=bool(getenv('HAS_SSL',False))
     if HAS_SSL:
         URL = "https://{}/".format(FQDN)
